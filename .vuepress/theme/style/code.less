@@ -1,0 +1,75 @@
+@codeBgColor: #282c34;
+.content{
+  code{
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+    color: #476582;
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    font-size: 0.85em;
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+    .token{
+      &.block-comment,&.cdata,&.comment,&.doctype,&.prolog{color:#999}
+      &.punctuation{color:#ccc}
+      &.attr-name,&.deleted,&.namespace,&.tag{color:#e2777a}
+      &.function-name{color:#6196cc}
+      &.boolean,&.function,&.number{color:#f08d49}
+      &.class-name,&.constant,&.property,&.symbol{color:#f8c555}
+      &.atrule,&.builtin,&.important,&.keyword,&.selector{color:#cc99cd}
+      &.attr-value,&.char,&.regex,&.string,&.variable{color:#7ec699}
+      &.entity,&.operator,&.url{color:#67cdcc}
+      &.bold,&.important{font-weight:700}
+      &.italic{font-style:italic}
+      &.entity{cursor:help}
+      &.inserted{color:green}
+    }
+  }
+
+  pre, pre[class*="language-"]{
+    line-height: 1.4;
+    padding: 1.25rem 1.5rem;
+    margin: 0.85rem 0;
+    background-color: @codeBgColor;
+    border-radius: 6px;
+    overflow: auto;
+    code{
+      color: #fff;
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  div[class*="language-"]{
+    position: relative;
+    background-color: @codeBgColor;
+    border-radius: 6px;
+    @media screen {
+      @media (max-width: 419px) {
+        margin: .85rem -5vw;
+        border-radius: 0;
+      }
+    }
+    pre, pre[class*="language-"]{
+      background: transparent;
+      position: relative;
+      z-index: 1;
+    }
+    &::before{
+      position: absolute;
+      z-index: 3;
+      top: 0.8em;
+      right: 1em;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }  
+}
+
+div[class~="language-javascript"]:before{
+  content: "js";
+}
+
+div[class~="language-bash"]:before{
+  content: "sh";
+}

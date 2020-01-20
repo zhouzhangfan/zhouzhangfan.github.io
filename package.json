@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build .",
+    "deploy": "vuepress build . && netlify deploy --prod"
+  },
+  "dependencies": {
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0"
+  },
+  "devDependencies": {
+    "vuepress": "^1.2.0"
+  },
+  "homepage": "https://zhouzhangfan.github.io/blog"
+}
